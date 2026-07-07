@@ -1,149 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avinash Kumar Raut - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avinash Kumar Raut | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-     <!-- Header -->
-    <header>
+
+    <!-- ─── LOADER ─── -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- ─── CURSOR ─── -->
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- ─── PARTICLES ─── -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ─── NAVBAR ─── -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <nav>
-                <div class="logo">
-                    <div class="profile-logo">
-                    <div class="profile-image-logo">
-                            <img src="/profile.jpeg" alt="Avinash Kumar Raut">
-                        </div>
-                    </div>
-                    Avinash Kumar Raut
-                </div>
-                <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#education">Education</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#featured">Certificates</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars hamburger"></i>
-                    <i class="fas fa-times close"></i>
-                </div>
-            </nav>
+            <a href="#" class="logo">Avi<span>nash</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section with Profile Card -->
-    <section id="home" class="hero">
-        <!-- <div class="floating-shapes">
-            <div class="shape circle"></div>
-            <div class="shape triangle"></div>
-            <div class="shape square"></div>
-        </div> -->
+    <!-- ─── HERO ─── -->
+    <section class="hero" id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="profile-card">
-                    <div class="profile-header">
-                        <div class="profile-image">
-                            <img src="/profile.jpeg" alt="Avinash Kumar Raut">
-                        </div>
-                        <h1 class="name">Avinash Kumar Raut</h1>
-                        <div class="title">Pursuing B.Tech CSE @Parul University</div>
-                        <div class="subtitle">Django Developer | Frontend Developer | Data Analyst</div>
-                        
-                        <div class="links">
-                            <a href="https://www.linkedin.com/in/avinash-kumar-raut-3379bb263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                            <a href="https://github.com/avinashkumar059" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Resume</a>
-                        </div>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge"><i class="fas fa-code"></i> Python Developer and Data Analyst</div>
+                    <h1>
+                        Hi, I'm <br /><span class="highlight">Avinash Kumar</span>
+                    </h1>
+                    <div class="hero-typing">
+                        <span class="typed-text" id="typedText"></span><span class="cursor"></span>
                     </div>
-                    
-                    <div class="bio-section">
-                        <div class="bio-card">
-                            <h2 class="section-title">Professional Bio</h2>
-                            <p class="bio">
-                                A motivated and detail-oriented B.Tech CSE student with strong analytical skills and a passion for data-driven decision-making. Proficient in tools like Python, Django, JavaScript, SQL, and Power BI. Adept at developing web applications and analyzing data to uncover actionable insights.
-                            </p>
-                        </div>
+                    <p class="hero-desc">
+                        A passionate Python Developer and Data Analyst with a strong interest in building efficient applications and transforming data into meaningful insights. I enjoy solving real-world problems through clean code, data-driven decisions, and continuous learning.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i> View My Work
+                        </a>
+                        <a href="#education" class="btn btn-secondary">
+                            <i class="fas fa-graduation-cap"></i> My Education
+                        </a>
                     </div>
-
-                    <div class="profile-content">
-                        <div class="section">
-                            <h2 class="section-title">Technical Skills</h2>
-                            <div class="tech-skills">
-                                <div class="tech-skill"><i class="fa-brands fa-html5"></i> HTML5</div>
-                                <div class="tech-skill"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
-                                <div class="tech-skill"><i class="fa-brands fa-js"></i> JavaScript</div>
-                                <div class="tech-skill"><i class="fa-brands fa-react"></i> ReactJS</div>
-                                <div class="tech-skill"><i class="fa-brands fa-python"></i> Python</div>
-                                <div class="tech-skill"><i class="fa-solid fa-database"></i> MySQL</div>
-                                <div class="tech-skill"><i class="fa-solid fa-chart-bar"></i> Power BI</div>
-                                <div class="tech-skill"><i class="fa-brands fa-git-alt"></i> Git</div>
-                                <div class="tech-skill"><i class="fa-brands fa-github"></i> GitHub</div>
-                                <div class="tech-skill"><i class="fa-solid fa-brain"></i> ChatGPT</div>
-                                <div class="tech-skill"><i class="fa-brands fa-dailymotion"></i> Django</div>
-                                <div class="tech-skill"><i class="fa-solid fa-table"></i> Excel</div>
-                            </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/avinashkumar059" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/avinash-kumar-raut-3379bb263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/9779819855603" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/avinash.059?igsh=MWt6MnpjZWNscjdveA==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-avatar-wrapper">
+                        <div class="hero-avatar">
+                            <img src="images/profile.jpg" alt="Avinash Kumar" />
                         </div>
+                        <div class="hero-avatar-ring"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
         <div class="container">
-            <div class="section-header">
-                <h3>Education</h3>
-                <p>My academic journey and qualifications</p>
+            <div class="section-header reveal">
+                <span class="label">About Me</span>
+                <h2>Who <span class="highlight">I Am</span></h2>
+                <p>Get to know me a little better — my journey, my values, and what drives me.</p>
             </div>
-            
-            <div class="education-container">
-                <!-- Education Card 1 -->
-                <div class="education-card">
-                    <div class="education-header">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="education-details">
-                            <h3>Parul University</h3>
-                            <div class="degree">B.Tech in Computer Science Engineering</div>
-                            <div class="date">2022 - Present</div>
-                        </div>
+            <div class="about-grid">
+                <div class="about-text reveal-left">
+                    <p>
+                        I'm a B.Tech Computer Science and Engineering student with a strong interest in Python development and data analytics. I enjoy building efficient web applications, and analyzing data to uncover meaningful insights that support better decision-making.
+                    </p>
+                    <p>
+                        I am passionate about solving real-world problems through technology, continuously improving my technical skills, and building reliable, data-driven solutions as a Python Developer and Data Analyst.
+                    </p>
+                </div>
+                <div class="about-image reveal-right">
+                    <img src="images/about.jpg" alt="Avinash Kumar" />
+                    <div class="overlay-gradient"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SKILLS ─── -->
+    <section id="skills" style="background:var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">My Skills</span>
+                <h2>Technologies <span class="highlight">I Work With</span></h2>
+                <p>Tools and frameworks I'm proficient in to bring ideas to life.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal" style="transition-delay:0.1s;">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>HTML &amp; CSS(Tailwind and bootstrap) &amp; JS</h3>
+                        <span>85%</span>
                     </div>
-                    <div class="education-body">
-                        <p>Pursuing my bachelor's degree in Computer Science Engineering.</p>
-                        <ul class="education-points">
-                            <!-- <li>Current CGPA: 7.82/10</li> -->
-                            
-                        </ul>
+                    <div class="skill-bar"><div class="fill" data-width="90"></div></div>
+                </div>
+                <div class="skill-card reveal" style="transition-delay:0.3s;">
+                    <div class="skill-header">
+                        <i class="fab fa-python"></i>
+                        <h3>Python &amp; Django</h3>
+                        <span>78%</span>
+                    </div>
+                    <div class="skill-bar"><div class="fill" data-width="78"></div></div>
+                </div>
+                <div class="skill-card reveal" style="transition-delay:0.4s;">
+                    <div class="skill-header">
+                        <i class="fas fa-database"></i>
+                        <h3>MongoDB &amp; MySQL</h3>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar"><div class="fill" data-width="82"></div></div>
+                </div>
+                <div class="skill-card reveal" style="transition-delay:0.3s;">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-file-excel"></i>
+                        <h3>Excel &amp; Spreadsheet</h3>
+                        <span>78%</span>
+                    </div>
+                    <div class="skill-bar"><div class="fill" data-width="78"></div></div>
+                </div>
+                <div class="skill-card reveal" style="transition-delay:0.4s;">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-chart-area"></i>
+                        <h3>PowerBI &amp; Tableau</h3>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar"><div class="fill" data-width="82"></div></div>
+                </div>
+                <div class="skill-card reveal" style="transition-delay:0.5s;">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-github"></i>
+                        <h3>Github &amp; VS Code</h3>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar"><div class="fill" data-width="70"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── EXPERIENCE ─── -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">Experience</span>
+                <h2>Where I've <span class="highlight">Worked</span></h2>
+                <p>My professional journey in the tech industry — building products that matter.</p>
+            </div>
+            <div class="experience-timeline">
+                <div class="exp-item reveal" style="transition-delay:0.1s;">
+                    <div class="exp-marker"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <h3>Web Developer</h3>
+                            <span class="company">Sofixs pvt.ltd</span>
+                            <span class="date">Feb 2022 – July 2022</span>
+                        </div>
+                        <p class="exp-desc">
+                            During my time at Sofixs Pvt. Ltd., I worked as a Web Developer, where I developed and maintained responsive web applications using React.js, Node.js, and MongoDB. I collaborated with the development team to build intuitive, user-friendly interfaces, implement front-end features, and resolve UI-related issues while optimizing website performance. This role provided me with hands-on experience in modern web development practices, teamwork, and problem-solving. I also prepared technical documentation and reports using Microsoft Office tools, strengthening my communication and organizational skills.
+                        </p>
+                        <div class="exp-tech">
+                            <span>React.js</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Team work</span>
+                            <span>Documentation</span>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Education Card 2 -->
-                <div class="education-card">
-                    <div class="education-header">
-                        <div class="education-icon">
-                            <i class="fas fa-school"></i>
+
+                <div class="exp-item reveal" style="transition-delay:0.2s;">
+                    <div class="exp-marker"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <h3>Computer Operator</h3>
+                            <span class="company">Unique Cyber</span>
+                            <span class="date">Feb 2022 – July 2022</span>
                         </div>
-                        <div class="education-details">
-                            <h3>Shree Rastriya Secondary School Rupaith Belhi, Nepal</h3>
-                            <div class="degree">Class 9 to 12 in Computer Engineering</div>
-                            <div class="date">2019 – 2022</div>
+                        <p class="exp-desc">
+                            I have been learning and improving my technical and professional skills. I gained knowledge of MS Office tools like Word, Excel, and PowerPoint, which I used for tasks such as preparing bills and managing documents. I also explored webpage design and SQL, and practiced building responsive web interfaces with HTML, CSS, and JavaScript. These experiences have helped me create user-friendly digital solutions while also improving my organizational and problem‑solving skills.
+                        </p>
+                        <div class="exp-tech">
+                            <span>MS Office</span><span>HTML</span><span>CSS</span><span>JS</span><span>SQL</span>
                         </div>
-                    </div>
-                    <div class="education-body">
-                        <p>Completed my higher secondary education with a focus on Technical Subjects.</p>
-                        <ul class="education-points">
-                            <!-- <li>12'th CGPA : 3.03/4</li>
-                            <li>10'th CGPA : 3.48/4</li> -->
-                        </ul>
                     </div>
                 </div>
 
@@ -151,193 +223,112 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <!-- ─── EDUCATION ─── -->
+    <section id="education" style="background:var(--bg-secondary);">
         <div class="container">
-            <div class="section-header">
-                <h3>Work Experience</h3>
-                <p>My professional journey and roles</p>
+            <div class="section-header reveal">
+                <span class="label">Education</span>
+                <h2>Academic <span class="highlight">Background</span></h2>
+                <p>My formal education and certifications that built the foundation of my career.</p>
             </div>
-            
-            <div class="experience-container">
-                <!-- Experience Card 1 -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="experience-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="experience-details">
-                            <h3>Computer Operator - (Internship)</h3>
-                            <div class="company">Unique Cyber, Janakpurdham-4,Dhanusha,Nepal.</div>
-                            <div class="date">May 2022 - Oct 2022</div>
-                        </div>
-                    </div>
-                    <div class="experience-body">
-                        <ul class="experience-points">
-                            <li>Learning and creating responsive web interfaces using HTML, CSS, and JavaScript</li>
-                            <li>Learning and preparing bills using MS Office</li>
-                        </ul>
-                        <div>
-                            <span class="experience-tag">HTML</span>
-                            <span class="experience-tag">CSS</span>
-                            <span class="experience-tag">JavaScript</span>
-                            <span class="experience-tag">MS Office</span>
-                        </div>
+            <div class="education-grid">
+                <div class="edu-card reveal" style="transition-delay:0.2s;">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="degree">Bachelor of Engineering in Computer Science</div>
+                    <div class="institution">Parul University, Gujarat, India</div>
+                    <div class="year">2022 – 2026</div>
+                    <p class="description">
+                        Completed a Bachelor of Engineering in Computer Science, building a strong foundation in software development, data structures, algorithms, databases, and modern technologies through academic projects and hands-on learning.
+                    </p>
+                    <div class="highlight-list">
+                        <span>CGPA : 8/10</span>
+                        <span>Research</span>
+                        <span>Problem‑solving</span>
+                        <span>Programmning-languages</span>
+                        <span>Core subjects(DBMS,OS,S/W,CN,and DE etc</span>
+                        <span>Data Structure & Algorithm</span>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
+                <div class="edu-card reveal" style="transition-delay:0.1s;">
+                    <div class="icon"><i class="fas fa-university"></i></div>
+                    <div class="degree">Class 9 to 12 in Computer Engineering</div>
+                    <div class="institution">Shree Rastriya Secondary School Rupaith Belhi, Nepal</div>
+                    <div class="year">2018 – 2022</div>
+                    <p class="description">
+                        Built a strong foundation in computer engineering by learning programming fundamentals, computer hardware, networking, and software concepts while developing analytical and technical skills.
+                    </p>
+                    <div class="highlight-list">
+                        <span>GPA: 3.03/4</span>
+                        <span>C adn C++</span>
+                        <span>Basic foundation of Computer Engineering</span>
+                        <span>Course like Diploma in Computer Engineering</span>
+                    </div>
+                </div>
 
-    <!-- Personal Achievements -->
-    <section id="featured" class="featured-projects">
-        <div class="container">
-            <div class="section-header">
-                <h3>Personal Achievements</h3>
-                <p>I have completed courses and gained valuable knowledge and skills.</p>
-            </div>
-
-            <div class="certificate-container">
-                <a href="/certificate/CN(Nptel).pdf" target="_blank" class="btn btn-certificate"><i class="fas fa-certificate"></i> Computer Networks and Internet Protocol (NPTEL)</a>
-                <a href="/certificate/Python(infosys_springboard).pdf" target="_blank" class="btn btn-certificate"><i class="fas fa-certificate"></i> Python (Infosys Springboard)</a>
-                <a href="/certificate/database and sql(infosys_springboard).pdf" target="_blank" class="btn btn-certificate"><i class="fas fa-certificate"></i> Database and SQL (Infosys Springboard)</a>
-                <a href="/certificate/Power Bi.pdf" target="_blank" class="btn btn-certificate"><i class="fas fa-certificate"></i> Power BI</a>
-                <a href="/certificate/Myntra data Analysis using Python (WsCube Tech).pdf" target="_blank" class="btn btn-certificate"><i class="fas fa-certificate"></i> Myntra Data Analysis using Python (WsCube Tech)</a>
-                <a href="/certificate/C-program(codingclub).jpg" target="_blank" class="btn btn-certificate"><i class="fas fa-certificate"></i> C Programming (Coding Club)</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- All Projects -->
-    <section id="projects" class="all-projects">
-        <div class="container">
-            <div class="section-header">
-                <h3>All Projects</h3>
-                <p>Explore my complete portfolio of development projects</p>
-            </div>
-            
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="html">HTML/CSS/JS</button>
-                <button class="filter-btn" data-filter="django">Django</button>
-                <button class="filter-btn" data-filter="powerbi">Power BI</button>
-                <button class="filter-btn" data-filter="sql">SQL</button>
-                <button class="filter-btn" data-filter="reactjs">ReactJS</button>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="compact-project" data-tech="html">
-                    <div class="compact-header">
-                        <h3 class="compact-title">Typing_Speed_Testing</h3>
-                        <span class="compact-tech">HTML/CSS/JS</span>
-                    </div>
-                    <div class="compact-body">
-                        <p class="compact-description">Typing_Speed_Tester application that measures your typing speed and accuracy in an aesthetically pleasing interface. With its gradient-themes design, responsive layout, and dark/light mode functionality, Typing_Speed_Tester offers an engaging experience for users looking to improve their typing skills.</p>
-                        <div class="compact-actions">
-                            <a href="https://avinashkumar059.github.io/Typing_Speed_Tester/" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
-                            <a href="https://github.com/avinashkumar059/Typing_Speed_Tester" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="compact-project" data-tech="html">
-                    <div class="compact-header">
-                        <h3 class="compact-title">Flower Gift Shop</h3>
-                        <span class="compact-tech">HTML/CSS/JS</span>
-                    </div>
-                    <div class="compact-body">
-                        <p class="compact-description">Flower & Gift House provides flowers, gifts, and event decorations for occasions like birthdays, anniversaries, Haldi ceremonies, and weddings. They feature an online gallery showcasing their offerings and You can contact them for orders via phone or email.</p>
-                        <div class="compact-actions">
-                            <a href="https://avinashkumar059.github.io/Flower_and_Gift_House/" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
-                            <a href="https://github.com/avinashkumar059/Flower_and_Gift_House" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="compact-project" data-tech="html">
-                    <div class="compact-header">
-                        <h3 class="compact-title">Language-Translator</h3>
-                        <span class="compact-tech">HTML/CSS/JS</span>
-                    </div>
-                    <div class="compact-body">
-                        <p class="compact-description">language translator website that enables users to translate text and documents across more than 60+ languages.After the translated content can also be downloaded as a document.</p>
-                        <div class="compact-actions">
-                            <a href="https://avinashkumar059.github.io/Language-Translator/" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
-                            <a href="https://github.com/avinashkumar059/Language-Translator" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="compact-project" data-tech="reactjs">
-                    <div class="compact-header">
-                        <h3 class="compact-title">Task Scheduler</h3>
-                        <span class="compact-tech">ReactJS</span>
-                    </div>
-                    <div class="compact-body">
-                        <p class="compact-description">The Task Scheduler is a React-based web application designed to help users organize and manage their daily tasks with a focus on priority handling and time management.</p>
-                        <div class="compact-actions">
-                            <a href="https://task-scheduler-f3ir.vercel.app/" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
-                            <a href="https://github.com/avinashkumar059/Task-Scheduler" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="compact-project" data-tech="powerbi">
-                    <div class="compact-header">
-                        <h3 class="compact-title">ITC Hotels Dashboard</h3>
-                        <span class="compact-tech">Power BI</span>
-                    </div>
-                    <div class="compact-body">
-                        <p class="compact-description">Interactive dashboard for analyzing hotel performance metrics and guest satisfaction using Power BI.</p>
-                        <div class="compact-actions">
-                            <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
-                            <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="compact-project" data-tech="powerbi">
-                    <div class="compact-header">
-                        <h3 class="compact-title">Financial Analysis Dashboard</h3>
-                        <span class="compact-tech">Power BI</span>
-                    </div>
-                    <div class="compact-body">
-                        <p class="compact-description">Financial analysis dashboard for credit card usage patterns and customer spending behavior using Power BI.</p>
-                        <div class="compact-actions">
-                            <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
-                            <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
+                <div class="edu-card reveal" style="transition-delay:0.3s;">
+                    <div class="icon"><i class="fas fa-certificate"></i></div>
+                    <div class="degree">Research &amp; Publications</div>
+                    <div class="institution">2025 IEEE 7th International Conference on Computing, Communication and Automation (ICCCA)</div>
+                    <div class="year">2025</div>
+                    <p class="description">
+                        Title of Paper : Live Attendance System Using Face Recognition <br>
+                        Abstract: A real-time attendance system was developed using FaceNet and OpenCV to automate attendance tracking.
+                    </p>
+                    <div class="highlight-list">
+                        <span>python 3.10+</span>
+                        <span>OpenCV</span>
+                        <span>face-recognition</span>
+                        <span>FaceNet</span>
+                        <span>detect multiple-faces</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
+    <!-- ─── PROJECTS ─── -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">Portfolio</span>
+                <h2>Featured <span class="highlight">Projects</span></h2>
+                <p>Some of the projects I've built recently — each one tells a story.</p>
+            </div>
+            <div class="project-filters reveal">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="web">Web Apps</button>
+                <button data-filter="mobile">Data Analyst</button>
+                <button data-filter="design">Design</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/avinash-kumar-raut-3379bb263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/avinashkumar059" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://www.facebook.com/avinash.ekcharli" class="social-link"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/avinash.059?igsh=MWt6MnpjZWNscjdveA==" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/avinashkumar059" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/avinash-kumar-raut-3379bb263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/9779819855603" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/avinash.059?igsh=MWt6MnpjZWNscjdveA==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>
+                &copy; 2026 <a href="#">Avinash Kumar Raut</a> 
                 
-            </div>
-            <div class="copyright">
-                © 2025 Avinash Kumar Raut. All Rights Reserved.<br>
-                Pursuing B.Tech CSE @Parul University
-            </div>
+                 <!-- -Copyright <i class="fas fa-heart" style="color:var(--accent-secondary);"></i> &amp; coffee. -->
+            </p>
         </div>
     </footer>
 
-<script src="script.js"></script>
+    <!-- ─── BACK TO TOP ─── -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ─── JAVASCRIPT ─── -->
+    <script src="script.js"></script>
+
 </body>
 </html>
